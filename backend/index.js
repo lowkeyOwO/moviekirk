@@ -23,10 +23,10 @@ app.use(express.urlencoded({ extended: true }));
 
 // Creating redis client
 const redisParams = {
-  password: "abAB12!@",
-  host: "redis-10383.c264.ap-south-1-1.ec2.cloud.redislabs.com",
-  port: 10383,
-  username: "lokeshvarathan",
+  password: process.env.REDIS_PW,
+  host: process.env.REDIS_HOST,
+  port: process.env.REDIS_PORT,
+  username: process.env.REDIS_UNAME,
 };
 const client = redis.createClient(redisParams);
 
